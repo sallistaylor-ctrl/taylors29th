@@ -145,6 +145,14 @@ nav.tabs{position:sticky;z-index:20}
 .stk.lo{opacity:.55}
 @media (max-width:1180px){.stk{opacity:.4}.stk.lo{opacity:.3}}
 @media (max-width:820px){.stk.hide-sm{display:none}.stk{opacity:.3}}
+.fc{display:grid;gap:8px;margin-top:4px}
+.fc-day{display:grid;grid-template-columns:30px 58px 1fr;grid-template-rows:auto auto;column-gap:10px;align-items:center;border-bottom:1px dashed rgba(63,36,27,.25);padding-bottom:7px}
+.fc-day svg{grid-row:1/3;width:28px;height:28px}
+.fc-name{font-family:var(--hand);font-size:19px;grid-row:1/3}
+.fc-temp{font-size:14px;font-variant-numeric:tabular-nums}
+.fc-temp b{font-family:var(--cut);font-weight:400;font-size:20px}
+.fc-note{font-size:12px;color:var(--ink-soft);grid-column:3}
+.fc-asof{font-size:11.5px;color:var(--ink-soft);margin-top:8px!important}
 .btn-link{display:inline-block;margin-top:6px;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--cherry)}
 
 /* flights */
@@ -307,8 +315,18 @@ footer small{display:block;font-family:var(--body);font-size:12px;color:var(--in
     </div>
     <div class="card speech">
       <h3>weather</h3>
-      <p class="big">High 50s<br>Low 30s</p>
-      <p>Maybe a little drizzly. Bring a light coat or rain jacket, nothing too heavy.</p>
+      <p class="big">High 40s<br>Low 30s</p>
+      <p>Chilly, with a chance of snow on Friday. It dries out for Saturday and Sunday.</p>
+    </div>
+    <div class="card forecast">
+      <span class="tape" aria-hidden="true"></span>
+      <h3>the forecast</h3>
+      <div class="fc">
+        <div class="fc-day"><svg viewBox="0 0 40 40" aria-hidden="true"><g stroke="#3F241B" stroke-width="2.4" stroke-linecap="round"><path d="M20 4v32M6 12l28 16M6 28l28-16"/><path d="M15 7l5 4 5-4M15 33l5-4 5 4"/></g></svg><span class="fc-name">Fri 13</span><span class="fc-temp"><b>41°</b> / 35°</span><span class="fc-note">60% chance of snow</span></div>
+        <div class="fc-day"><svg viewBox="0 0 48 40" aria-hidden="true"><circle cx="30" cy="14" r="8" fill="#F6DCDD" stroke="#3F241B" stroke-width="2"/><path d="M12 34h24a8 8 0 0 0 0-16 11 11 0 0 0-21 3 7 7 0 0 0-3 13z" fill="#FAF6EF" stroke="#3F241B" stroke-width="2.2" stroke-linejoin="round"/></svg><span class="fc-name">Sat 14</span><span class="fc-temp"><b>47°</b> / 34°</span><span class="fc-note">mostly dry</span></div>
+        <div class="fc-day"><svg viewBox="0 0 48 40" aria-hidden="true"><circle cx="30" cy="14" r="8" fill="#F6DCDD" stroke="#3F241B" stroke-width="2"/><path d="M12 34h24a8 8 0 0 0 0-16 11 11 0 0 0-21 3 7 7 0 0 0-3 13z" fill="#FAF6EF" stroke="#3F241B" stroke-width="2.2" stroke-linejoin="round"/></svg><span class="fc-name">Sun 15</span><span class="fc-temp"><b>49°</b> / 33°</span><span class="fc-note">dry</span></div>
+      </div>
+      <p class="fc-asof">Forecast as of Thu, Nov 12. Check again before you pack!</p>
     </div>
     <div class="card">
       <span class="tape" aria-hidden="true"></span>
